@@ -1,4 +1,3 @@
-from faker import Faker
 from django.http import HttpRequest, HttpResponse
 from .services.get_random_user import get_random_user
 
