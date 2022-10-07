@@ -1,10 +1,8 @@
-from faker import Faker
 from django.http import HttpRequest, HttpResponse
-
-faker = Faker()
+from .services.get_random_user import get_random_user
 
 
 def index(request: HttpRequest, name: str | None = None) -> HttpResponse:
     if name is None:
-        name = faker.first_name()
+        name = get_random_user()
     return HttpResponse(f"Hello, {name} ")
